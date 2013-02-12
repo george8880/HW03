@@ -13,8 +13,8 @@
 <% @ratings.each do |rating| %>
   <tr>
     <td><%= rating.score %></td>
-    <td><%= rating.user %></td>
-    <td><%= rating.movie %></td>
+    <td><%= rating.user_name %></td>
+    <td><%= rating.movie_name %></td>
     <td><%= link_to 'Show', rating %></td>
     <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
     <td><%= link_to 'Destroy', rating, confirm: 'Are you sure?', method: :delete %></td>
