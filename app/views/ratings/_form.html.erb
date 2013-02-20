@@ -40,23 +40,23 @@ class: "form-horizontal"
   </div>
 
   <div class="control-group">
-    <%= f.label :user, class:'control-label' %>
-    <div class="controls">
+    <%= f.label :user_id, "User", class: 'control-label' %>
+    <div class="control">
       <%= f.collection_select :user_id, User.all, :id, :name %>
-      <%= link_to "New User", new_user_path %>
+      <%= link_to "New User", new_user_path, class: "btn btn-success" %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :movie, class:'control-label' %>
-    <div class="controls">
+    <%= f.label :movie_id, "Movie", class: 'control-label' %>
+    <div class="control">
       <%= f.collection_select :movie_id, Movie.all, :id, :name %>
-      <%= link_to "New Movie", new_movie_path %>
+      <%= link_to "New Movie", new_movie_path, class: "btn btn-success" %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit class:"btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
 <% end %>

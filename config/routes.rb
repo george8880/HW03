@@ -1,4 +1,6 @@
 HW03::Application.routes.draw do
+  resources :players
+
   resources :ratings
 
   resources :users
