@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe 'Adding a Movie' do
+  fixtures :raters
+
+  before do
+  	sign_in
+  end
+
   it 'requires a name' do
   	visit movies_path
   	click_link "New Movie"

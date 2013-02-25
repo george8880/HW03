@@ -1,4 +1,6 @@
 HW03::Application.routes.draw do
+  devise_for :raters
+
   resources :players
 
   resources :ratings

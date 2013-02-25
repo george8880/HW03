@@ -29,6 +29,13 @@
               <li><a href="/ratings">Ratings</a></li>
               <li><a href="/movies">Movies</a></li>
               <li><a href="/users">Users</a></li>
+
+              <%if rater_signed_in? %>
+                <li><%= link_to 'Logout',
+                destroy_rater_session_path,
+                method: :delete %></li>
+              <% end %>
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -36,7 +43,19 @@
     </div>
 
 <div class="container">
-  <%= yield%>
+
+  <% if alert %>
+    <div class="alertalert-error">
+      <%= alert %>
+    </div>
+  <% end %>
+  <% if notice %>
+    <div class="alertalert-success">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <%= yield %>
 </div>
 
 </body>
