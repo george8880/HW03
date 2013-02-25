@@ -4,7 +4,7 @@ class Rating < ActiveRecord::Base
 
   attr_accessible :user_id, :movie_id, :score
   validates :user_id, :movie_id, :score, presence: true
-  validates :user_id, :uniqueness => true
+  validates :user_id, :uniqueness => {:scope => :movie_id}
 
   def movie_name
 	movie.name if movie
