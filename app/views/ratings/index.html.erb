@@ -22,6 +22,29 @@
 <% end %>
 </table>
 
-<br />
+<br>
 
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+  <body>
+    <button type="button" class="btn btn-primary" data-toggle="button">Click to see what each number represents</button>
+
+    <p>
+      <br>
+      1: Don't waste your time <br>     
+      2: I guess if you have nothing better to do... <br>     
+      3: Good time-killer <br>
+      4: You need to watch this if you haven't already  <br>    
+      5: Don't talk to me until you've watched this
+    </p>
+
+  <script>
+    $("p").hide();
+    $("button").click(function () {
+      $("p").fadeToggle("slow", "swing");
+    });
+  </script>
+
+<br>
+<br>
 <%= link_to 'New Rating', new_rating_path %>
