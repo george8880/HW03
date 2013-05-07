@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
+gem 'rake', '10.0.4'
+
 gem 'devise'
 gem 'rails_admin'
 

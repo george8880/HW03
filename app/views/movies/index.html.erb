@@ -1,23 +1,22 @@
 <h1>Listing movies</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Genre</th>
-    <th>Year</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @movies.each do |movie| %>
+<table class="table">  
+  <thead>  
+    <tr>  
+      <th>Movie Name</th>  
+      <th>Genre</th>  
+      <th>Year Released</th>  
+      <th>Average Rating</th>  
+    </tr>  
+  </thead>  
+  
+  <% @movies.each do |movie| %>
   <tr>
     <td><%= movie.name %></td>
     <td><%= movie.genre %></td>
     <td><%= movie.year %></td>
+    <td><%= movie.get_score %></td>
     <td><%= link_to 'Show', movie %></td>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

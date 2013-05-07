@@ -25,6 +25,8 @@ class MoviesController < ApplicationController
   # GET /movies/new.json
   def new
     @movie = Movie.new
+    @movie.totalScore = 0
+    @movie.numRatings = 0
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,34 +52,6 @@ class MoviesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PUT /movies/1
-  # PUT /movies/1.json
-  def update
-    @movie = Movie.find(params[:id])
-
-    respond_to do |format|
-      if @movie.update_attributes(params[:movie])
-        format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /movies/1
-  # DELETE /movies/1.json
-  def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
-
-    respond_to do |format|
-      format.html { redirect_to movies_url }
-      format.json { head :no_content }
     end
   end
 end

@@ -52,32 +52,4 @@ class RatingsController < ApplicationController
       end
     end
   end
-
-  # PUT /ratings/1
-  # PUT /ratings/1.json
-  def update
-    @rating = Rating.find(params[:id])
-
-    respond_to do |format|
-      if @rating.update_attributes(params[:rating])
-        format.html { redirect_to @rating, notice: 'Rating was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @rating.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /ratings/1
-  # DELETE /ratings/1.json
-  def destroy
-    @rating = Rating.find(params[:id])
-    @rating.destroy
-
-    respond_to do |format|
-      format.html { redirect_to ratings_url }
-      format.json { head :no_content }
-    end
-  end
 end
